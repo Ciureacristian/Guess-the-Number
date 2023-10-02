@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    rel="stylesheet"
+    href="css/style.css"
+  >
+    <title>Game</title>
+</head>
+<body>
+    <h1>Guess Game</h1>
+    <div class="game-container">
+   
+    
+    
+    <div id="messageDiv">
+      <span id="userGuessDisplay"></span><br>
+      <span id="tryAgainMessage"></span><br>
+      <span id="resultMessage"></span>
+      <span id="lives">10 heart</span>
+    </div>
+    <form id="guessForm">
+        <label for="userGuess">Guess the number between 1 and 100:</label>
+        <input type="text" id="userGuess" min="1" max="100" required>
+        <button type="submit">Guess</button>
+        
+      </form>
+    <ul id="guessResults"></ul>
+    <button id="resetButton">Reset</button>
+</div>
+      <script src="app.js"></script>
+</body>
+</html>
