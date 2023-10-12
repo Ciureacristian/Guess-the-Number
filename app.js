@@ -12,8 +12,8 @@ document
   .addEventListener('submit', function (event) {
     event.preventDefault();
    
-    const userGuess = parseInt(document.getElementById('userGuess').value);
-    attempts++;
+    const userGuessInput = document.getElementById('userGuess'); // Obține elementul de intrare pentru ghicirea utilizatorului
+    const userGuess = parseInt(userGuessInput.value);
     
 
     if (userGuess < 1 || userGuess > 100 || isNaN(userGuess)) {
@@ -26,9 +26,11 @@ document
         if (userGuess < myGuess) {
           tryAgainMessage.textContent = 'The number is too small. Keep trying!';
           resultMessage.textContent = '';
+          loseLife();
         } else if (userGuess > myGuess) {
           tryAgainMessage.textContent = 'The number is too high. Keep trying!';
           resultMessage.textContent = '';
+          loseLife();
         } else {
           tryAgainMessage.textContent = '';
           resultMessage.textContent = 'Congratulations! You guessed the correct number.';
@@ -38,7 +40,9 @@ document
         if (userGuess === myGuess) {
             guessResultsList.innerHTML = `You guessed the correct number in ${attempts} attempts.`;
           }
-        }      
+        }    
+        userGuessInput.value = '';  
+
     });
 
   
@@ -56,3 +60,27 @@ document
         resultMessage.textContent = '';
         document.getElementById('userGuess').disabled = false;
       });
+
+      var livesElement = document.getElementById("lives");
+
+function updateHeartIcon(lives) {
+    livesElement.innerHTML = "";
+    
+    for (var i = 0; i < lives; i++) {
+        var heartIcon = document.createElement("i");
+        heartIcon.classList.add("fas", "fa-heart"); 
+        heartIcon.style.color = "red";
+        heartIcon.style.fontSize = "24px"; 
+        heartIcon.style.marginRight = "5px";
+        heartIcon.classList.add("heart-pulse");
+        livesElement.appendChild(heartIcon);
+    }
+}
+
+
+var numLives = 10; 
+
+function loseLife() {
+    numLives--;
+    updateHeartIcon(numLives); 
+}
