@@ -17,12 +17,10 @@ body {
     box-shadow .4s ease;
     border-radius: .5em;
     animation: rotate 10s infinite linear;
-   
-    
-  background-color: #bcbcff;
-  background-image: radial-gradient(circle at center center, #b81414, #bcbcff), repeating-radial-gradient(circle at center center, #b81414, #b81414, 9px, transparent 18px, transparent 9px);
-  
-  }
+    background-color: #bcbcff;
+    background: url('/img/6071859.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
 
  
   a {
@@ -47,6 +45,7 @@ body {
 h1{
     font-size: 64px;
     text-align: center;
+    margin: 132px;
 }
 
 button {

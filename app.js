@@ -51,7 +51,7 @@ document
         myGuess = Math.floor(Math.random() * 100) + 1;
         attempts = 0;
         lives = 10; 
-        livesSpan.textContent = `${lives} vieți rămase`;
+        livesSpan.textContent = `${lives} lifes`;
         guessResultsList.innerHTML = '';
         userGuessInput.disabled = false;
         userGuessInput.value = '';
